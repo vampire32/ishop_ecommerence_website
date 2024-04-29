@@ -10,7 +10,7 @@ class Order extends Model
     use HasFactory;
 
     protected $table='orders';
-    protected $fillable=['ProductName','ProductPrice','ProductPicture','UserEmail','Username','UserAddress','UserNumber','status'];
+    protected $fillable=['ProductName','ProductPrice','ProductPicture','status','Address','user_id','Quantity'];
 
     public function users(){
         return $this->hasOne(User::class, $foreignKey='id');

@@ -22,9 +22,11 @@ class OrderFactory extends Factory
             'ProductName'=>fake()->word(),
             'ProductPrice'=>'3,500PKR',
             'ProductPicture'=>fake()->image(),
-            
+
             'status'=>fake()->word(),
              'user_id'=>User::factory(),
+            'Address'=>fake()->address(),
+            'Quantity'=>fake()->randomNumber(),
 
 
         ];

@@ -1,3 +1,4 @@
+@props(['products'])
 <style>
      .swiper {
       width: 100%;
@@ -22,24 +23,22 @@
 </style>
 <div class="swiper mySwiper mt-5">
     <div class="swiper-wrapper">
+        @foreach($products as $item)
       <div class="swiper-slide">
-        <x-productcard ProductName="kurta" />
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <a href="/product/{{$item['id']}}">
+                  <img class="rounded-t-lg w-[50%]" src="{{$item['ProductPicture']}}" alt="" />
+              </a>
+              <div class="p-5">
+                  <a href="/product/{{$item['id']}}">
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$item['ProductName']}}</h5>
+                  </a>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$item['ProductDescription']}}</p>
+
+              </div>
+          </div>
       </div>
-      <div class="swiper-slide">
-        <x-productcard/>
-      </div>
-      <div class="swiper-slide">
-        <x-productcard/>
-</div>
-      <div class="swiper-slide">
-        <x-productcard/>
-</div>
-      <div class="swiper-slide">
-        <x-productcard/>
-</div>
-      <div class="swiper-slide">
-        <x-productcard/>
-</div>
+        @endforeach
 
     </div>
     <div class="swiper-button-next"></div>

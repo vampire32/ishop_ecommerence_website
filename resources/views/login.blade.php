@@ -161,18 +161,19 @@
             <span class="text-gray-300 font-normal">or continue with</span>
             <span class="h-px w-16 bg-gray-200"></span>
           </div>
-          <form class="mt-8 space-y-6" action="#" method="POST">
+          <form class="mt-8 space-y-6" action="/login" method="post">
+              @csrf
             <input type="hidden" name="remember" value="true">
             <div class="relative">
-            
+
               <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
-              <input class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500" type="" placeholder="mail@gmail.com" value="mail@gmail.com">
+              <input class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500" type="email" placeholder="mail@gmail.com" name="email">
             </div>
             <div class="mt-8 content-center">
               <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">
                 Password
               </label>
-              <input class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password" value="*****|">
+              <input class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500" type="password" placeholder="Enter your password" name="password">
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center">
@@ -194,7 +195,7 @@
             </div>
             <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
               <span>Don't have an account?</span>
-              <a href="#" class="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
+              <a  class="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
                 up</a>
             </p>
           </form>
