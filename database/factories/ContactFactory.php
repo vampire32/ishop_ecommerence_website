@@ -19,7 +19,6 @@ class ContactFactory extends Factory
     {
         return [
             'email'=>fake()->email(),
-            'subject'=>fake()->sentence(),
             'message'=>fake()->paragraph(),
             'user_id'=>User::factory(),
         ];
